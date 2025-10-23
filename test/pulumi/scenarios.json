@@ -1,0 +1,30 @@
+{
+    "test_latest_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "pulumi": {
+                "version": "latest"
+            }
+        }
+    },
+    "test_specific_version": {
+        "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+        "features": {
+            "pulumi": {
+                "version": "3.200.0"
+            }
+        }
+    },
+    "test_alpine": {
+        "image": "mcr.microsoft.com/devcontainers/base:alpine",
+        "features": {
+            "pulumi": {}
+        }
+    },
+    "test_debian": {
+        "image": "mcr.microsoft.com/devcontainers/base:debian",
+        "features": {
+            "pulumi": {}
+        }
+    }
+}

@@ -1,0 +1,40 @@
+{
+  "id": "pulumi",
+  "version": "1.0.0",
+  "name": "Pulumi CLI",
+  "description": "Installs the Pulumi CLI for infrastructure as code development",
+  "documentationURL": "https://github.com/pierskarsenbarg/pulumi-feature",
+  "licenseURL": "https://github.com/pierskarsenbarg/pulumi-feature/blob/main/LICENSE",
+  "keywords": [
+    "pulumi",
+    "infrastructure",
+    "iac",
+    "cloud",
+    "deployment"
+  ],
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "latest",
+        "3.203.0",
+        "3.202.0",
+        "3.201.0",
+        "3.200.0"
+      ],
+      "default": "latest",
+      "description": "Version of Pulumi CLI to install. Use 'latest' for the most recent stable release. See https://www.pulumi.com/docs/get-started/download-install/versions/ for available versions."
+    },
+    "skipChecksumValidation": {
+      "type": "boolean",
+      "default": false,
+      "description": "Skip SHA256 checksum validation (NOT RECOMMENDED - reduces security)"
+    }
+  },
+  "containerEnv": {
+    "PULUMI_SKIP_UPDATE_CHECK": "true"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}

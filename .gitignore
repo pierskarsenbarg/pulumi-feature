@@ -1,0 +1,20 @@
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Testing
+*.log
+
+# Node modules (if using devcontainer CLI)
+node_modules/
+
+# Temp files
+*.tmp
+tmp/
