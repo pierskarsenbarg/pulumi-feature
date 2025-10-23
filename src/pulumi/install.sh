@@ -93,7 +93,7 @@ trap 'rm -rf "${TMP_DIR}"' EXIT
 echo "Downloading Pulumi CLI v${INSTALL_VERSION}..."
 if ! curl -fsSL -o "${TMP_DIR}/pulumi.tar.gz" "${PULUMI_URL}"; then
     echo "Error: Failed to download Pulumi from ${PULUMI_URL}"
-    echo "Please verify the version exists at https://github.com/pulumi/pulumi/releases"
+    echo "Please verify the version exists at https://www.pulumi.com/docs/get-started/download-install/versions/"
     exit 1
 fi
 
@@ -114,7 +114,7 @@ else
 
     # Extract the checksum for our specific archive from the checksums file
     # The checksums file contains lines like: "<hash>  <filename>"
-    EXPECTED_CHECKSUM="$(grep "${ARCHIVE_FILENAME}" checksums.txt | cut -d' ' -f1)"
+    EXPECTED_CHECKSUM="$(grep "${ARCHIVE_FILENAME}" checksums.txt | awk '{print $1}')"
 
     if [ -z "${EXPECTED_CHECKSUM}" ]; then
         echo "Error: Could not find checksum for ${ARCHIVE_FILENAME} in checksums file."
@@ -123,7 +123,7 @@ else
     fi
 
     # Calculate actual checksum
-    ACTUAL_CHECKSUM="$(sha256sum pulumi.tar.gz | cut -d' ' -f1)"
+    ACTUAL_CHECKSUM="$(sha256sum pulumi.tar.gz | awk '{print $1}')"
 
     if [ "${EXPECTED_CHECKSUM}" != "${ACTUAL_CHECKSUM}" ]; then
         echo "Error: Checksum verification failed!"

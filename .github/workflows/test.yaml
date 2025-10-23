@@ -11,6 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      fail-fast: true
       matrix:
         features:
           - pulumi
@@ -31,6 +32,7 @@ jobs:
     runs-on: ubuntu-latest
     continue-on-error: true
     strategy:
+      fail-fast: true
       matrix:
         features:
           - pulumi
