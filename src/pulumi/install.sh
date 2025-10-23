@@ -62,6 +62,8 @@ case "${OS_ID}" in
         ;;
 esac
 
+echo "Version to install: ${VERSION}"
+
 # Determine version to install
 if [ "${VERSION}" = "latest" ]; then
     echo "Fetching latest Pulumi version..."
