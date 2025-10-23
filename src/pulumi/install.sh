@@ -7,10 +7,10 @@ set -e
 echo "Installing Pulumi CLI..."
 
 # Read feature options (converted to uppercase environment variables)
-VERSION="${VERSION:-"latest"}"
+PULUMI_VERSION="${VERSION:-"latest"}"
 SKIP_CHECKSUM_VALIDATION="${SKIPCHECKSUMVALIDATION:-"false"}"
 
-echo "Version to install at the beginning: ${VERSION}"
+echo "Version to install at the beginning: ${PULUMI_VERSION}"
 
 # Detect OS
 if [ -f /etc/os-release ]; then
@@ -64,10 +64,10 @@ case "${OS_ID}" in
         ;;
 esac
 
-echo "Version to install later on: ${VERSION}"
+echo "Version to install later on: ${PULUMI_VERSION}"
 
 # Determine version to install
-if [ "${VERSION}" = "latest" ]; then
+if [ "${PULUMI_VERSION}" = "latest" ]; then
     echo "Fetching latest Pulumi version..."
     INSTALL_VERSION="$(curl -fsSL https://www.pulumi.com/latest-version)"
     if [ -z "${INSTALL_VERSION}" ]; then
@@ -76,7 +76,7 @@ if [ "${VERSION}" = "latest" ]; then
     fi
     echo "Latest version: ${INSTALL_VERSION}"
 else
-    INSTALL_VERSION="${VERSION}"
+    INSTALL_VERSION="${PULUMI_VERSION}"
     # Remove 'v' prefix if present
     INSTALL_VERSION="${INSTALL_VERSION#v}"
     echo "Installing specified version: ${INSTALL_VERSION}"
