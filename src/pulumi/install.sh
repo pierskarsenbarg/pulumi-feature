@@ -10,9 +10,6 @@ echo "Installing Pulumi CLI..."
 VERSION="${VERSION:-"latest"}"
 SKIP_CHECKSUM_VALIDATION="${SKIPCHECKSUMVALIDATION:-"false"}"
 
-echo "Version: ${VERSION}"
-exit 1
-
 # Detect OS
 if [ -f /etc/os-release ]; then
     . /etc/os-release
