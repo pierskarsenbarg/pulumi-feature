@@ -10,7 +10,7 @@ echo "Installing Pulumi CLI..."
 VERSION="${VERSION:-"latest"}"
 SKIP_CHECKSUM_VALIDATION="${SKIPCHECKSUMVALIDATION:-"false"}"
 
-echo "Version to install: ${VERSION}"
+echo "Version to install at the beginning: ${VERSION}"
 
 # Detect OS
 if [ -f /etc/os-release ]; then
@@ -64,7 +64,7 @@ case "${OS_ID}" in
         ;;
 esac
 
-
+echo "Version to install at the beginning: ${VERSION}"
 
 # Determine version to install
 if [ "${VERSION}" = "latest" ]; then
