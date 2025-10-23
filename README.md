@@ -153,16 +153,3 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 MIT License - see [LICENSE](LICENSE) file for details.
 
-## Links
-
-- [Pulumi Documentation](https://www.pulumi.com/docs/)
-- [DevContainer Features Specification](https://containers.dev/implementors/features/)
-- [Pulumi GitHub Repository](https://github.com/pulumi/pulumi)
-
-## Support
-
-If you encounter any issues or have questions:
-
-1. Check the [Pulumi documentation](https://www.pulumi.com/docs/)
-2. Review [Pulumi releases](https://github.com/pulumi/pulumi/releases) for version compatibility
-3. Open an issue in this repository
