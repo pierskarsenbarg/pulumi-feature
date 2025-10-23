@@ -64,7 +64,7 @@ case "${OS_ID}" in
         ;;
 esac
 
-echo "Version to install at the beginning: ${VERSION}"
+echo "Version to install later on: ${VERSION}"
 
 # Determine version to install
 if [ "${VERSION}" = "latest" ]; then
